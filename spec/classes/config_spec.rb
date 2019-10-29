@@ -10,6 +10,7 @@ describe 'rustup::config' do
           'rustup::home_folder' => '/home/ubuntu',
           'rustup::releases' => ['stable', 'beta', 'nightly'],
           'rustup::targets' => ['x86_64-unknown-linux-gnu'],
+          'rustup::profile' => 'minimal',
         }
       end
 

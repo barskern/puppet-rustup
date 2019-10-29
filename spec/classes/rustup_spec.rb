@@ -10,6 +10,7 @@ describe 'rustup' do
           'rustup::install_url' => 'https://sh.rustup.rs',
           'rustup::releases' => ['stable', 'beta', 'nightly'],
           'rustup::targets' => ['x86_64-unknown-linux-gnu'],
+          'rustup::profile' => 'minimal',
         }
       end
 
