@@ -1,0 +1,3 @@
+---
+rustup::user: 'ubuntu'
+rustup::install_url: 'https://sh.rustup.rs'
