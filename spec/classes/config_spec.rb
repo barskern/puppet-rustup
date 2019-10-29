@@ -8,6 +8,8 @@ describe 'rustup::config' do
         {
           'rustup::user' => 'ubuntu',
           'rustup::home_folder' => '/home/ubuntu',
+          'rustup::releases' => ['stable', 'beta', 'nightly'],
+          'rustup::targets' => ['x86_64-unknown-linux-gnu'],
         }
       end
 

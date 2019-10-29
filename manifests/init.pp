@@ -2,6 +2,8 @@
 class rustup (
   String $user,
   Stdlib::HTTPSUrl $install_url,
+  Array[String] $releases,
+  Array[String] $targets,
 ) {
   $home_folder = "/home/${rustup::user}"
 
