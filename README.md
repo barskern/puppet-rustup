@@ -33,12 +33,13 @@ TODO should we depend on an external downloader for the script instead of hardco
 include rustup
 ```
 
-#### Specifying custom release and target
+#### Specifying custom release, target and profile
 
 ```puppet
 class { 'rustup':
-	$targets => ['x86_64-unknown-linux-gnu'],
-	$releases => ['nightly-2019-09-05'],
+	targets => ['x86_64-unknown-linux-gnu'],
+	releases => ['nightly-2019-09-05'],
+	profile => 'minimal',
 }
 ```
 
