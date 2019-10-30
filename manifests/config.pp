@@ -13,6 +13,19 @@ class rustup::config {
   }
 
   $rustup::targets.each |String $target| {
+
+    # Per target dependencies
+    case $target {
+      'x86_64-unknown-linux-gnu': {
+        package { [ 'build-essential' ]:
+          ensure  => present,
+        }
+      }
+      default: {
+        fail("Unsupported target: ${target}")
+      }
+    }
+
     $rustup::releases.each |String $release| {
       exec { "rustup install ${release}-${target}":
         path        => ["${rustup::home_folder}/.cargo/bin/",],
@@ -22,5 +35,4 @@ class rustup::config {
       }
     }
   }
-
 }

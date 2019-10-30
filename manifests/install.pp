@@ -11,15 +11,9 @@ class rustup::install {
     home   => $rustup::home_folder,
   }
 
-  package { [ 'curl'
-            , 'zip'
-            , 'unzip'
-            , 'build-essential'
-            , 'openssl'
-            , 'libssl-dev'
-            , 'pkg-config'
-            ]:
-    ensure  => present,
+  # Needed to download installation script
+  package { 'curl':
+    ensure => present,
   }
 
   $install_script = '/tmp/rustup-init.sh'
