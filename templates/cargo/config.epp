@@ -1,0 +1,7 @@
+<%- | Array[Struct[{name => String, prefix => String}]] $targets = [] | -%>
+# DO NOT MANUALLY EDIT AS FILE IS MANAGED BY PUPPET
+
+<% $targets.each |Struct[{name => String, prefix => String}] $target| { -%>
+[target.<%= $target['name'] %>]
+linker = "<%= $target['prefix'] %>-gcc"
+<% } -%>
