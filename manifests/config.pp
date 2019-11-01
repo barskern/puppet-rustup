@@ -77,11 +77,6 @@ class rustup::config {
       }
     }
 
-    file { "${rustup::home_folder}/.cargo/bin":
-      ensure  => present,
-      content => epp('cargo/config.epp', { targets => $targets_and_prefixes }),
-    }
-
     $rustup::releases.each |String $release| {
       exec { "rustup install ${release}-${target}":
         path        => ["${rustup::home_folder}/.cargo/bin/",],
@@ -90,5 +85,10 @@ class rustup::config {
         require     => Exec["rustup set profile ${rustup::profile}"]
       }
     }
+  }
+
+  file { "${rustup::home_folder}/.cargo/config":
+    ensure  => present,
+    content => epp('rustup/cargo/config.epp', { targets => $targets_and_prefixes }),
   }
 }
