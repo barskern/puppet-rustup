@@ -1,5 +1,9 @@
 # rustup
 
+![Status](https://img.shields.io/badge/status-under--development-orange)
+[![Build Status](https://travis-ci.com/barskern/puppet-rustup.svg?branch=master)](https://travis-ci.com/barskern/puppet-rustup)
+
+
 #### Table of Contents
 
 1. [Description](#description)
